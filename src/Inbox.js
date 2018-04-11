@@ -22,7 +22,7 @@ class Inbox extends React.Component {
       messageId: null,
       type: "",
       showMail: false,
-      view: props.location.query.view || ""
+      view: props.location ? props.location.query.view : ""
     };
   }
 

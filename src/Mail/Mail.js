@@ -27,7 +27,6 @@ class Mail extends React.Component {
       files: [],
       read: false,
       archived: false
-
     };
     this.replies = [];
     this.handleReplyContent = this.handleReplyContent.bind(this);
