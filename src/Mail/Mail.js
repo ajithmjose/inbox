@@ -79,7 +79,7 @@ class Mail extends React.Component {
       });
     }
     if(this.state.view === "inbox") {
-      window.history.replaceState({}, document.title, "/inbox");
+      hashHistory.push('/inbox')
     }
   }
 

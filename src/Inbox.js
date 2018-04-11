@@ -77,7 +77,7 @@ class Inbox extends React.Component {
       success: ""
     }));
     if(this.state.view === "inbox") {
-      window.history.replaceState({}, document.title, "/inbox");
+      hashHistory.push('/inbox')
     }
   };
 
