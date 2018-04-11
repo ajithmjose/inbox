@@ -40,8 +40,10 @@ class Inbox extends React.Component {
     });
   };
 
-  componentWillReceiveProps = () => {
-    console.log("here")
+  componentWillReceiveProps = (nextProps) => {
+    this.setState((prevState, props) => ({
+      view: nextProps.view
+    }));
   }
 
   updateList = () => {
