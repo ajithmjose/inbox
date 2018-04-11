@@ -76,7 +76,7 @@ class Inbox extends React.Component {
       showArchived: !this.state.showArchived,
       success: ""
     }));
-    if(this.props.location.query.view === "inbox") {
+    if(this.state.view === "inbox") {
       window.history.replaceState({}, document.title, "/inbox");
     }
   };

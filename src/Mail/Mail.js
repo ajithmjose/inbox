@@ -26,7 +26,8 @@ class Mail extends React.Component {
       user: null,
       files: [],
       read: false,
-      archived: false
+      archived: false,
+      view: props.location ? props.location.query.view : ""
     };
     this.replies = [];
     this.handleReplyContent = this.handleReplyContent.bind(this);
@@ -77,7 +78,7 @@ class Mail extends React.Component {
         }
       });
     }
-    if(this.props.location.query.view === "inbox") {
+    if(this.state.view === "inbox") {
       window.history.replaceState({}, document.title, "/inbox");
     }
   }
