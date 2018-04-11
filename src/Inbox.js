@@ -69,7 +69,7 @@ class Inbox extends React.Component {
     this.setState((prevState, props) => ({
       showArchived: !this.state.showArchived,
       success: "",
-      view={"mailPage"}
+      view:"mailPage"
     }));
   };
 
