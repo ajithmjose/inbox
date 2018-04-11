@@ -26,8 +26,7 @@ class Mail extends React.Component {
       user: null,
       files: [],
       read: false,
-      archived: false,
-      view: props.view
+      archived: false
     };
     this.replies = [];
     this.handleReplyContent = this.handleReplyContent.bind(this);
@@ -78,6 +77,7 @@ class Mail extends React.Component {
         }
       });
     }
+    console.log(window.location.href)
   }
 
   handleReplyState = () => {

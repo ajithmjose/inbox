@@ -21,8 +21,7 @@ class Inbox extends React.Component {
       showArchived: false,
       messageId: null,
       type: "",
-      showMail: false,
-      view: null
+      showMail: false
     };
   }
 
@@ -38,13 +37,8 @@ class Inbox extends React.Component {
         archives: data
       }));
     });
+    console.log(window.location.href)
   };
-
-  componentWillReceiveProps = (nextProps) => {
-    this.setState((prevState, props) => ({
-      view: nextProps.view
-    }));
-  }
 
   updateList = () => {
     api.getMails().then(data => {
@@ -70,8 +64,7 @@ class Inbox extends React.Component {
   showArchived = () => {
     this.setState((prevState, props) => ({
       showArchived: !this.state.showArchived,
-      success: "",
-      view:"mailPage"
+      success: ""
     }));
   };
 
@@ -106,7 +99,6 @@ class Inbox extends React.Component {
           type={this.state.type}
           callbackCloseSelf={this.callbackCloseSelf}
           callbackSetMessage={this.callbackSetMessage}
-          view={"mailPage"}
         />
       );
     }
