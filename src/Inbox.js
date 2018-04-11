@@ -21,7 +21,8 @@ class Inbox extends React.Component {
       showArchived: false,
       messageId: null,
       type: "",
-      showMail: false
+      showMail: false,
+      view: props.location.query.view || ""
     };
   }
 
@@ -37,7 +38,11 @@ class Inbox extends React.Component {
         archives: data
       }));
     });
-    console.log(window.location.href)
+
+    this.setState((prevState, props) => ({
+      showArchived: !this.state.view === "inbox",
+      showMail: !this.state.view === "inbox"
+    }));
   };
 
   updateList = () => {
@@ -52,6 +57,11 @@ class Inbox extends React.Component {
         archives: data
       }));
     });
+
+    this.setState((prevState, props) => ({
+      showArchived: !this.state.view === "inbox",
+      showMail: !this.state.view === "inbox"
+    }));
   };
 
   epochSecondToDate = epochSecond => {
@@ -66,6 +76,9 @@ class Inbox extends React.Component {
       showArchived: !this.state.showArchived,
       success: ""
     }));
+    if(this.props.location.query.view === "inbox") {
+      window.history.replaceState({}, document.title, "/inbox");
+    }
   };
 
   setupMail = (id, type) => {
