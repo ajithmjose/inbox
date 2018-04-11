@@ -79,7 +79,7 @@ class Mail extends React.Component {
       });
     }
     if(this.state.view === "inbox") {
-      window.location = '/inbox'
+      window.location.href = '/inbox'
     }
   }
 
