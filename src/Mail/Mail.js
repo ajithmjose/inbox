@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import * as api from "./../api";
 import { Link } from "react-router";
 import Dropzone from "react-dropzone";
@@ -7,7 +7,7 @@ import moment from "moment";
 
 import "./mail.css";
 
-class Mail extends React.Component {
+class Mail extends Component {
   constructor(props) {
     super(props);
     this.state = {

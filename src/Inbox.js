@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import { Link } from "react-router";
 import PathwayList from "@react-ag-components/pathway-list";
 import * as api from "./api";
@@ -9,7 +9,7 @@ import moment from "moment";
 
 import "./inbox.css";
 
-class Inbox extends React.Component {
+class Inbox extends Component {
   constructor(props) {
     super(props);
     this.state = {
